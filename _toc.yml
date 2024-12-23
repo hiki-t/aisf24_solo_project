@@ -3,9 +3,12 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-  title: my reading list
-- file: notebooks
-  title: my work
-# - file: markdown-notebooks
+parts:
+  - caption: Learning materials
+    chapters:
+    - file: markdown
+      title: Learning materials #1
+  - caption: My work
+    chapters:
+    - file: notebooks
+      title: My AISF solo project
