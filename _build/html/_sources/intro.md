@@ -1,4 +1,8 @@
-# Welcome to your Jupyter Book
+# Welcome to my work during the AI Safety Fundamental program
+
+Organized by BlueDot Impact
+
+Course: AI Alignment
 
 This is a small sample book to give you a feel for how book content is
 structured.
