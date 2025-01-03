@@ -2,13 +2,13 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: nb/intro
 parts:
   - caption: Learning materials
     chapters:
-    - file: markdown
+    - file: nb/markdown
       title: Learning materials #1
   - caption: My work
     chapters:
-    - file: notebooks
+    - file: nb/notebooks
       title: My AISF solo project
