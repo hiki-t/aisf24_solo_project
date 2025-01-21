@@ -4,11 +4,11 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Learning materials
-    chapters:
-    - file: nb/markdown
-      title: Learning materials #1
   - caption: My work
     chapters:
-    - file: nb/notebooks
-      title: My AISF solo project
+    - file: nb/notebook1
+      title: Project1
+    - file: nb/notebook2
+      title: Project2
+    - file: nb/notebook3
+      title: Project3
