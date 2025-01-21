@@ -1,0 +1,1185 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Experiment 2 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nb/notebook2';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Experiment 3" href="notebook3.html" />
+    <link rel="prev" title="Experiment 1" href="notebook1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to my AISF work
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">My work</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebook1.html">Project1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Project2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebook3.html">Project3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnb/notebook2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/nb/notebook2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Experiment 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exp2">Exp2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exp2-0-prepare-packages">Exp2.0. Prepare packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exp2-1-run-first-exp">Exp2.1. Run first exp</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exp2-2-result-1">Exp2.2. Result 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exp2-3-run-second-exp">Exp2.3. Run second exp</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exp2-4-result-2">Exp2.4. Result 2</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="experiment-2">
+<h1>Experiment 2<a class="headerlink" href="#experiment-2" title="Link to this heading">#</a></h1>
+<p><br><br></p>
+<section id="exp2">
+<h2>Exp2<a class="headerlink" href="#exp2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>After replicating one of the <a class="reference external" href="https://transformer-circuits.pub/2022/toy_model/index.html">Anthropic research outcome (Elhage et al., 2022)</a> (see the left square box in the diagram below), the next step is to replicate the remaining twos to examine if neural nets with only 2 dims can represent more than two features like the remaining square boxes below.</p></li>
+<li><p>Because using real noisy image datasets of the MNIST hand-written digit images in this experiment (instead of hypothetically synthetic features used in the Anthropic work), I expect that results will be messy, meaning that achieving either of the two remaining features representation patterns or any other multiple features represenations would be expected when sparsity level is set to highly larger than 0.0 (e.g. 0.99-0.999).</p></li>
+<li><p>Different from the previous experiment, I also implemented sparsity penalty with the <a class="reference external" href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">kl divergence method</a>.</p></li>
+<li><p>Additionally, I set a high sparsity level to the hidden layer (i.e. 49 dim) of the linear model so that neural information sending into the sparse autoencoder (SAE) model is already sparse.</p></li>
+</ul>
+<br><p><img alt="alt text" src="../_images/exp1_diagram1.png" /></p>
+<p><br><br></p>
+</section>
+<section id="exp2-0-prepare-packages">
+<h2>Exp2.0. Prepare packages<a class="headerlink" href="#exp2-0-prepare-packages" title="Link to this heading">#</a></h2>
+<p><br><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### import packages </span>
+
+<span class="c1"># ml/nn</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>  <span class="c1"># all neural network modules</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>  <span class="c1"># Functions with no parameters -&gt; activation functions</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>  <span class="c1"># optimization algo</span>
+
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">Dataset</span> <span class="c1"># easier dataset management, helps create mini batches</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">random_split</span> <span class="c1"># set train-test ratio</span>
+
+<span class="c1"># import torchvision</span>
+<span class="kn">import</span> <span class="nn">torchvision.datasets</span> <span class="k">as</span> <span class="nn">datasets</span>  <span class="c1"># standard datasets</span>
+<span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">transforms</span> <span class="c1"># this for convert dataset to tensor</span>
+<span class="kn">from</span> <span class="nn">torchvision.utils</span> <span class="kn">import</span> <span class="n">make_grid</span> <span class="c1"># this for visualization</span>
+
+<span class="c1"># stats/ml #1</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># stats/ml #2</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">decomposition</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">manifold</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><br><br></p>
+</section>
+<section id="exp2-1-run-first-exp">
+<h2>Exp2.1. Run first exp<a class="headerlink" href="#exp2-1-run-first-exp" title="Link to this heading">#</a></h2>
+<p><br><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### set device</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cpu
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### define original functions</span>
+
+<span class="k">def</span> <span class="nf">norm_point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="c1"># Calculate the length of the vector</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="c1"># Check where length is 0</span>
+    <span class="n">zero_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Boolean mask for elements where length is 0</span>
+
+    <span class="c1"># Initialize normalized coordinates</span>
+    <span class="n">x_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">y_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    
+    <span class="c1"># Perform normalization only where length != 0</span>
+    <span class="n">x_norm</span><span class="p">[</span><span class="o">~</span><span class="n">zero_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="o">~</span><span class="n">zero_mask</span><span class="p">]</span> <span class="o">/</span> <span class="n">length</span><span class="p">[</span><span class="o">~</span><span class="n">zero_mask</span><span class="p">]</span>
+    <span class="n">y_norm</span><span class="p">[</span><span class="o">~</span><span class="n">zero_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">~</span><span class="n">zero_mask</span><span class="p">]</span> <span class="o">/</span> <span class="n">length</span><span class="p">[</span><span class="o">~</span><span class="n">zero_mask</span><span class="p">]</span>
+    
+    <span class="c1"># For dimensions where length == 0, retain the original values</span>
+    <span class="n">x_norm</span><span class="p">[</span><span class="n">zero_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">zero_mask</span><span class="p">]</span>
+    <span class="n">y_norm</span><span class="p">[</span><span class="n">zero_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">zero_mask</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">x_norm</span><span class="p">,</span> <span class="n">y_norm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Define all parameters</span>
+
+<span class="c1"># later these will be inserted at the beginning as args</span>
+
+<span class="c1"># fixed</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">input_size</span> <span class="o">=</span> <span class="mi">784</span>
+<span class="n">num_classes</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># variable</span>
+<span class="n">hidden_size</span> <span class="o">=</span> <span class="mi">49</span>  <span class="c1"># for lin model</span>
+<span class="n">hidden_size2</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># for sae hidden dim</span>
+<span class="n">lr1</span> <span class="o">=</span> <span class="mf">0.001</span>
+<span class="n">lr2</span> <span class="o">=</span> <span class="mf">0.0001</span>
+
+<span class="c1"># when sparsity lv is close to 0, feature is dense</span>
+<span class="n">sparsity_lv</span> <span class="o">=</span> <span class="mf">0.999</span> <span class="c1"># interestingly, sparsity level should be as high as 0.999 or higher to get multiple feature representations</span>
+<span class="n">sparsity_impact</span> <span class="o">=</span> <span class="mf">1e-4</span> 
+<span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-8</span> <span class="c1"># epsilon</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### define datasets</span>
+
+<span class="c1"># load dataset</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;../dataset/&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">train_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;../dataset/&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">test_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">test_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### implement single layer linear (MLP) model, classic autoencoder model, sparse autoencoder model</span>
+
+<span class="c1"># linear (MLP) model</span>
+<span class="k">class</span> <span class="nc">lin_model</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">,</span> 
+                 <span class="n">sparsity_lambda</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">sparsity_target</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-8</span>
+                <span class="p">):</span>  
+        <span class="nb">super</span><span class="p">(</span><span class="n">lin_model</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span> <span class="c1"># input: 28x28=784, hidden: 7x7=49</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span> <span class="c1"># hidden: 49, num_classes: 10</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">sparsity_lambda</span> <span class="o">=</span> <span class="n">sparsity_lambda</span> <span class="c1"># sparsity penalty impact</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sparsity_target</span> <span class="o">=</span> <span class="n">sparsity_target</span> <span class="c1"># target sparsity distribution</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">epsilon</span> <span class="o">=</span> <span class="n">epsilon</span>
+
+        <span class="c1"># paper said, initialization use the Kaiming Uniform initialization</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">kaiming_uniform_</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc1</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">constant_</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc1</span><span class="o">.</span><span class="n">bias</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 784-&gt;49</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># range within [-1:1]</span>
+        <span class="n">x_h</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># add non-linearity</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">x_h</span><span class="p">)</span> <span class="c1"># 49-&gt;10</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">x_h</span>
+        
+    <span class="c1"># paper said used sum, but I will explore with kl divergence</span>
+    <span class="k">def</span> <span class="nf">sparsity_penalty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoded</span><span class="p">):</span>
+        <span class="n">rho_hat</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">encoded</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">rho</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sparsity_target</span>
+        <span class="n">epsilon</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">epsilon</span>
+        <span class="n">rho_hat</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="n">rho_hat</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="n">epsilon</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">1</span> <span class="o">-</span> <span class="n">epsilon</span><span class="p">)</span>
+        <span class="n">kl_divergence</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rho</span> <span class="o">/</span> <span class="n">rho_hat</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rho</span><span class="p">)</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rho</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rho_hat</span><span class="p">))</span>
+        <span class="n">sparsity_penalty</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">kl_divergence</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sparsity_lambda</span> <span class="o">*</span> <span class="n">sparsity_penalty</span>
+
+    <span class="c1"># this forces the linear model neural activations to be sparse before sending them to SAE model</span>
+    <span class="k">def</span> <span class="nf">loss_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_hat</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">encoded</span><span class="p">):</span>
+        <span class="n">crossE_loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">cross_entropy</span><span class="p">(</span><span class="n">x_hat</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+        <span class="n">sparsity_loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sparsity_penalty</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">crossE_loss</span> <span class="o">+</span> <span class="n">sparsity_loss</span>
+
+<span class="c1"># sparse autoencoder (SAE)</span>
+<span class="k">class</span> <span class="nc">sae_model</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoder</span><span class="p">,</span> <span class="n">decoder</span><span class="p">,</span> 
+                 <span class="n">sparsity_lambda</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">sparsity_target</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-8</span>
+                <span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">sae_model</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">encoder</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">decoder</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sparsity_lambda</span> <span class="o">=</span> <span class="n">sparsity_lambda</span> <span class="c1"># sparsity penalty impact</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sparsity_target</span> <span class="o">=</span> <span class="n">sparsity_target</span> <span class="c1"># target sparsity distribution</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">epsilon</span> <span class="o">=</span> <span class="n">epsilon</span>
+
+        <span class="c1"># paper said, initialization use the Kaiming Uniform initialization</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">kaiming_uniform_</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="o">.</span><span class="n">fc_enc</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">constant_</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="o">.</span><span class="n">fc_enc</span><span class="o">.</span><span class="n">bias</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        
+        <span class="c1"># paper said, initialization use the Kaiming Uniform initialization</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">kaiming_uniform_</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="o">.</span><span class="n">fc_dec</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">constant_</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="o">.</span><span class="n">fc_dec</span><span class="o">.</span><span class="n">bias</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">encoded</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">decoded</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">decoded</span><span class="p">,</span> <span class="n">encoded</span>
+
+    <span class="c1"># paper said used sum, but I will explore with kl divergence</span>
+    <span class="k">def</span> <span class="nf">sparsity_penalty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoded</span><span class="p">):</span>
+        <span class="n">rho_hat</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">encoded</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">rho</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sparsity_target</span>
+        <span class="n">epsilon</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">epsilon</span>
+        <span class="n">rho_hat</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="n">rho_hat</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="n">epsilon</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">1</span> <span class="o">-</span> <span class="n">epsilon</span><span class="p">)</span>
+        <span class="n">kl_divergence</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rho</span> <span class="o">/</span> <span class="n">rho_hat</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rho</span><span class="p">)</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rho</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rho_hat</span><span class="p">))</span>
+        <span class="n">sparsity_penalty</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">kl_divergence</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sparsity_lambda</span> <span class="o">*</span> <span class="n">sparsity_penalty</span>
+    
+    <span class="k">def</span> <span class="nf">loss_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_hat</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">encoded</span><span class="p">):</span>
+        <span class="n">mse_loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="n">x_hat</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+        <span class="n">sparsity_loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sparsity_penalty</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">mse_loss</span> <span class="o">+</span> <span class="n">sparsity_loss</span>
+
+<span class="c1"># encoder net/layer</span>
+<span class="k">class</span> <span class="nc">encoderNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">encoderNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc_enc</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc_enc</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 49-&gt;2</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># range [-1:1] as similar operations as previous exp</span>
+        <span class="c1"># x = F.relu(x)</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+<span class="c1"># decoder net/layer</span>
+<span class="k">class</span> <span class="nc">decoderNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">decoderNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc_dec</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc_dec</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 2 -&gt; orig(49) dim</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># same as the above</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+<span class="c1"># classic autoencoder</span>
+<span class="k">class</span> <span class="nc">ae_model</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ae_model</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span> <span class="c1"># input: 49, target_dim: 2, for visualising superposition in 2d</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">input_size</span><span class="p">)</span> <span class="c1"># input: 2, target_dim: 49</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 49-&gt;2</span>
+        <span class="n">x_2d</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># range within [-1:1]</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">x_2d</span><span class="p">)</span> <span class="c1"># 2-&gt;49</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># range within [-1:1]</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># simulate lin_model&#39;s process</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">x_2d</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### initialize model, loss, optimizer</span>
+
+<span class="n">m1</span> <span class="o">=</span> <span class="n">lin_model</span><span class="p">(</span>
+    <span class="n">input_size</span><span class="o">=</span><span class="n">input_size</span><span class="p">,</span>
+    <span class="n">hidden_size</span><span class="o">=</span><span class="n">hidden_size</span><span class="p">,</span> <span class="c1"># 49</span>
+    <span class="n">num_classes</span><span class="o">=</span><span class="n">num_classes</span><span class="p">,</span> <span class="c1"># 10</span>
+    <span class="n">sparsity_lambda</span><span class="o">=</span><span class="n">sparsity_impact</span><span class="p">,</span> 
+    <span class="n">sparsity_target</span><span class="o">=</span><span class="n">sparsity_lv</span><span class="p">,</span> 
+    <span class="n">epsilon</span><span class="o">=</span><span class="n">eps</span>
+<span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="n">enc_m</span> <span class="o">=</span> <span class="n">encoderNN</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="n">hidden_size2</span><span class="p">)</span>
+<span class="n">dec_m</span> <span class="o">=</span> <span class="n">decoderNN</span><span class="p">(</span><span class="n">hidden_size</span><span class="o">=</span><span class="n">hidden_size2</span><span class="p">,</span> <span class="n">output_size</span><span class="o">=</span><span class="n">hidden_size</span><span class="p">)</span>
+
+<span class="n">m2</span> <span class="o">=</span> <span class="n">sae_model</span><span class="p">(</span>
+    <span class="n">encoder</span><span class="o">=</span><span class="n">enc_m</span><span class="p">,</span> 
+    <span class="n">decoder</span><span class="o">=</span><span class="n">dec_m</span><span class="p">,</span> 
+    <span class="n">sparsity_lambda</span><span class="o">=</span><span class="n">sparsity_impact</span><span class="p">,</span> 
+    <span class="n">sparsity_target</span><span class="o">=</span><span class="n">sparsity_lv</span><span class="p">,</span> 
+    <span class="n">epsilon</span><span class="o">=</span><span class="n">eps</span>
+<span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># Loss and Optimizer</span>
+<span class="c1"># criterion1 = nn.CrossEntropyLoss()</span>
+<span class="c1"># criterion2 = nn.MSELoss()</span>
+<span class="n">opt1</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">m1</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr1</span><span class="p">)</span> 
+<span class="n">opt2</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">m2</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr2</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### train and validaiton</span>
+
+<span class="c1">###</span>
+<span class="c1">### phase 1: prepare trained weights with larger dim</span>
+<span class="c1">###</span>
+
+<span class="n">num_epochs1</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># training lin model</span>
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs1</span><span class="p">):</span>
+
+    <span class="c1"># Training</span>
+    <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
+
+        <span class="c1"># reshape [batch, 1, 28,28] to [batch, 28*28]</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="p">)</span>
+
+        <span class="c1"># Step 1: Forward pass through model1</span>
+        <span class="n">out1</span><span class="p">,</span> <span class="n">h1</span> <span class="o">=</span> <span class="n">m1</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># out1:[batch, 10] as 10 class, h1:[batch, 49] as 49 latent</span>
+        
+        <span class="c1"># Step 4: Compute loss1 and update model1</span>
+        <span class="n">loss1</span> <span class="o">=</span> <span class="n">m1</span><span class="o">.</span><span class="n">loss_function</span><span class="p">(</span><span class="n">out1</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">h1</span><span class="p">)</span>
+        <span class="c1"># loss1 = criterion1(out1, targets)</span>
+        <span class="n">opt1</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">loss1</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">opt1</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+    <span class="n">num_correct</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">num_samples</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># Validation</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">test_loader</span><span class="p">):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="p">)</span>
+            <span class="n">out1</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">m1</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">predictions</span> <span class="o">=</span> <span class="n">out1</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">num_correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">predictions</span> <span class="o">==</span> <span class="n">targets</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+            <span class="n">num_samples</span> <span class="o">+=</span> <span class="n">predictions</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">accuracy</span> <span class="o">=</span> <span class="n">num_correct</span><span class="o">/</span><span class="n">num_samples</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch [</span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">num_epochs1</span><span class="si">}</span><span class="s2">], loss1: </span><span class="si">{</span><span class="n">loss1</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [1/10], loss1: 0.1754, accuracy: 0.9266
+Epoch [2/10], loss1: 0.1520, accuracy: 0.9399
+Epoch [3/10], loss1: 0.0670, accuracy: 0.9480
+Epoch [4/10], loss1: 0.0782, accuracy: 0.9524
+Epoch [5/10], loss1: 0.1857, accuracy: 0.9556
+Epoch [6/10], loss1: 0.0627, accuracy: 0.9570
+Epoch [7/10], loss1: 0.0613, accuracy: 0.9589
+Epoch [8/10], loss1: 0.0357, accuracy: 0.9598
+Epoch [9/10], loss1: 0.0432, accuracy: 0.9605
+Epoch [10/10], loss1: 0.0546, accuracy: 0.9609
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###</span>
+<span class="c1">### phase 2: train AE model weights with 2 dim</span>
+<span class="c1">###</span>
+
+<span class="n">num_epochs2</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="c1"># training ae model and visualize results</span>
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs2</span><span class="p">):</span>
+
+    <span class="c1"># Training autoencoder model</span>
+    <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
+
+        <span class="c1"># reshape [batch, 1, 28,28] to [batch, 28*28]</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">h1</span> <span class="o">=</span> <span class="n">m1</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># out1:[batch, 10] as 10 class, h1:[batch, 49] as 49 latent</span>
+            <span class="n">h1_clone</span> <span class="o">=</span> <span class="n">h1</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        
+        <span class="n">out2</span><span class="p">,</span> <span class="n">encoded</span> <span class="o">=</span> <span class="n">m2</span><span class="p">(</span><span class="n">h1_clone</span><span class="p">)</span>  <span class="c1"># 49 -&gt; 2 -&gt; 49</span>
+
+        <span class="n">loss2</span> <span class="o">=</span> <span class="n">m2</span><span class="o">.</span><span class="n">loss_function</span><span class="p">(</span><span class="n">out2</span><span class="p">,</span> <span class="n">h1_clone</span><span class="p">,</span> <span class="n">encoded</span><span class="p">)</span>
+        <span class="c1"># loss2 = criterion2(out2, h1_clone)</span>
+        <span class="n">opt2</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">loss2</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">opt2</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+    <span class="c1"># visualization</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+
+        <span class="c1"># Collecting data # lin model</span>
+        <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
+
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="p">)</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">h1</span> <span class="o">=</span> <span class="n">m1</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">batch_idx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">target_h1</span> <span class="o">=</span> <span class="n">h1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">target_h1</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">target_h1</span><span class="p">,</span><span class="n">h1</span><span class="p">))</span>
+
+        <span class="c1"># Collecting data # ae model</span>
+        <span class="n">reconstruct_target_h1</span><span class="p">,</span> <span class="n">h2_2d</span> <span class="o">=</span> <span class="n">m2</span><span class="p">(</span><span class="n">target_h1</span><span class="p">)</span>
+        
+        <span class="c1"># Collecting data # original loss</span>
+        <span class="n">target_loss2_orig</span> <span class="o">=</span> <span class="n">m2</span><span class="o">.</span><span class="n">loss_function</span><span class="p">(</span><span class="n">reconstruct_target_h1</span><span class="p">,</span> <span class="n">target_h1</span><span class="p">,</span> <span class="n">h2_2d</span><span class="p">)</span>
+        <span class="c1"># target_loss2_orig = criterion2(reconstruct_target_h1, target_h1)</span>
+
+        <span class="c1"># Importance and xy2d coord calculation        </span>
+        <span class="n">batch_size</span><span class="p">,</span> <span class="n">large_model_dim</span> <span class="o">=</span> <span class="n">target_h1</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">importance</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">target_dim_2d</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">one_dim</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">large_model_dim</span><span class="p">):</span>
+
+            <span class="c1"># importance</span>
+            <span class="n">h1_perturb</span> <span class="o">=</span> <span class="n">target_h1</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+            <span class="n">h1_perturb</span><span class="p">[:,</span><span class="n">one_dim</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">reconstruct_h1_perturb</span><span class="p">,</span> <span class="n">encoded_perturb</span> <span class="o">=</span> <span class="n">m2</span><span class="p">(</span><span class="n">h1_perturb</span><span class="p">)</span>
+            <span class="n">loss2_perturb</span> <span class="o">=</span> <span class="n">m2</span><span class="o">.</span><span class="n">loss_function</span><span class="p">(</span><span class="n">reconstruct_h1_perturb</span><span class="p">,</span> <span class="n">target_h1</span><span class="p">,</span> <span class="n">encoded_perturb</span><span class="p">)</span>
+            <span class="c1"># loss2_perturb = criterion2(reconstruct_h1_perturb, target_h1)</span>
+            <span class="n">importance</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss2_perturb</span> <span class="o">-</span> <span class="n">target_loss2_orig</span><span class="p">)</span>
+
+            <span class="c1"># xy_2d</span>
+            <span class="n">target_h1_one_dim</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">target_h1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span> <span class="c1"># batch, larger dim</span>
+            <span class="n">target_h1_one_dim</span><span class="p">[:,</span><span class="n">one_dim</span><span class="p">]</span> <span class="o">=</span> <span class="n">target_h1</span><span class="p">[:,</span><span class="n">one_dim</span><span class="p">]</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">target_h1_2d</span> <span class="o">=</span> <span class="n">m2</span><span class="p">(</span><span class="n">target_h1_one_dim</span><span class="p">)</span>
+            <span class="n">target_dim_2d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">target_h1_2d</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+        
+        <span class="n">target_dim_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">target_dim_2d</span><span class="p">)</span>
+        
+        <span class="c1"># calculate importance according to contribution to MSE loss</span>
+        <span class="n">importance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">imp</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">importance</span><span class="p">)</span> <span class="k">for</span> <span class="n">imp</span> <span class="ow">in</span> <span class="n">importance</span><span class="p">])</span>
+        <span class="c1"># importance[importance&lt;(1/large_model_dim)] = 0.0 # convert importance lower than expected contribution into 0</span>
+        <span class="n">importance_norm</span> <span class="o">=</span> <span class="p">(</span><span class="n">importance</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">importance</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">importance</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">importance</span><span class="p">))</span> <span class="c1"># normalize value into 0-1 range</span>
+
+        <span class="c1"># compute xy_coordinates</span>
+
+        <span class="c1"># use raw xy2d with unrestricted magnitude vector as it is</span>
+        <span class="n">xy_coord</span> <span class="o">=</span> <span class="n">importance_norm</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">*</span> <span class="n">target_dim_2d</span> <span class="c1"># because calculate [large_dim,]*[large_dim,xy_coord]</span>
+        <span class="c1"># xy_coord = xy_coord/np.abs(xy_coord).max() # adjust max magnitude to -1.0 to 1.0</span>
+        <span class="n">x_coord</span> <span class="o">=</span> <span class="n">xy_coord</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">y_coord</span> <span class="o">=</span> <span class="n">xy_coord</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="c1"># set a magnitude of xy2d with 1</span>
+        <span class="n">x_coord_norm</span><span class="p">,</span> <span class="n">y_coord_norm</span> <span class="o">=</span> <span class="n">norm_point</span><span class="p">(</span><span class="n">target_dim_2d</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">target_dim_2d</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">x_coord_norm</span> <span class="o">=</span> <span class="n">x_coord_norm</span> <span class="o">*</span> <span class="n">importance_norm</span>
+        <span class="n">y_coord_norm</span> <span class="o">=</span> <span class="n">y_coord_norm</span> <span class="o">*</span> <span class="n">importance_norm</span>
+
+        <span class="c1"># graph visualization</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_coord</span><span class="p">)):</span>
+            <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_coord</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y_coord</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">x_coord</span><span class="p">[</span><span class="n">i</span><span class="p">]],[</span><span class="mi">0</span><span class="p">,</span><span class="n">y_coord</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+            <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_coord_norm</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y_coord_norm</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">x_coord_norm</span><span class="p">[</span><span class="n">i</span><span class="p">]],[</span><span class="mi">0</span><span class="p">,</span><span class="n">y_coord_norm</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+
+        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;imp * len=flex&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;imp * len=fix1&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch [</span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">num_epochs2</span><span class="si">}</span><span class="s2">], loss2: </span><span class="si">{</span><span class="n">loss2</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/08ed19bbf38f7feb18315380ba4ee596c6383be562e1df7d59931c2b393e4111.png" src="../_images/08ed19bbf38f7feb18315380ba4ee596c6383be562e1df7d59931c2b393e4111.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [1/20], loss2: 0.2968
+</pre></div>
+</div>
+<img alt="../_images/e75fbe0727ecdbde482adb50164b9ab1733ccd2529f0fd7789552e6163526275.png" src="../_images/e75fbe0727ecdbde482adb50164b9ab1733ccd2529f0fd7789552e6163526275.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [2/20], loss2: 0.2634
+</pre></div>
+</div>
+<img alt="../_images/de54604229d0775fe551721350e86e8d1c98e848b0d29fd64064365d10e76abe.png" src="../_images/de54604229d0775fe551721350e86e8d1c98e848b0d29fd64064365d10e76abe.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [3/20], loss2: 0.2642
+</pre></div>
+</div>
+<img alt="../_images/d6239892885fcfb75799d089f0892807d1cb54b5c4252f70e0d64ce971b7f485.png" src="../_images/d6239892885fcfb75799d089f0892807d1cb54b5c4252f70e0d64ce971b7f485.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [4/20], loss2: 0.2246
+</pre></div>
+</div>
+<img alt="../_images/6b5a320657de88d833847cc79c2a4ee9ee3a2f3f8c8dce14f2094750facdcb35.png" src="../_images/6b5a320657de88d833847cc79c2a4ee9ee3a2f3f8c8dce14f2094750facdcb35.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [5/20], loss2: 0.2011
+</pre></div>
+</div>
+<img alt="../_images/a79c4b61a8bfed868754fc2d7b00b31af901106a7f83c71a3738ae8781a5d621.png" src="../_images/a79c4b61a8bfed868754fc2d7b00b31af901106a7f83c71a3738ae8781a5d621.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [6/20], loss2: 0.1949
+</pre></div>
+</div>
+<img alt="../_images/9c4bd78c7fff5b824cb4a939dfbfe54ba2986e1e4ce530888123a067c031ef43.png" src="../_images/9c4bd78c7fff5b824cb4a939dfbfe54ba2986e1e4ce530888123a067c031ef43.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [7/20], loss2: 0.1867
+</pre></div>
+</div>
+<img alt="../_images/8112d7259bb83ba3f6f11289d5801f5c77a9e5e894550a3d9aa243d8b0b52f81.png" src="../_images/8112d7259bb83ba3f6f11289d5801f5c77a9e5e894550a3d9aa243d8b0b52f81.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [8/20], loss2: 0.1851
+</pre></div>
+</div>
+<img alt="../_images/7e652b814993c1a95d130fc4211db40c3fba8f08ac45ee5ae53ffeedb88f05eb.png" src="../_images/7e652b814993c1a95d130fc4211db40c3fba8f08ac45ee5ae53ffeedb88f05eb.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [9/20], loss2: 0.1882
+</pre></div>
+</div>
+<img alt="../_images/4213ee6bc021547d0c980e28867e1e12819f6869fa18e71867eb831422484dde.png" src="../_images/4213ee6bc021547d0c980e28867e1e12819f6869fa18e71867eb831422484dde.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [10/20], loss2: 0.1801
+</pre></div>
+</div>
+<img alt="../_images/826a17430b788d56811b456c37a295c865fa5a587128be530b02d9210a49362b.png" src="../_images/826a17430b788d56811b456c37a295c865fa5a587128be530b02d9210a49362b.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [11/20], loss2: 0.1713
+</pre></div>
+</div>
+<img alt="../_images/dcb0cfecc29844d21b9973352354d10f82a3b13a4f1fed96356b339e0010ed75.png" src="../_images/dcb0cfecc29844d21b9973352354d10f82a3b13a4f1fed96356b339e0010ed75.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [12/20], loss2: 0.1683
+</pre></div>
+</div>
+<img alt="../_images/a4ecc8b37554f7d43e5396bf6f4b7cc8425b53ad63d903066f9deeaa32d4467e.png" src="../_images/a4ecc8b37554f7d43e5396bf6f4b7cc8425b53ad63d903066f9deeaa32d4467e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [13/20], loss2: 0.1672
+</pre></div>
+</div>
+<img alt="../_images/d4eb0843446ccd7f2af8ca69a948f74001138f629bcfdd9908eb21eabc27cb66.png" src="../_images/d4eb0843446ccd7f2af8ca69a948f74001138f629bcfdd9908eb21eabc27cb66.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [14/20], loss2: 0.1633
+</pre></div>
+</div>
+<img alt="../_images/7d14cd67897c7598df4a063774a1bc2a557fd48ee3f6f92a465ef4618cb8742d.png" src="../_images/7d14cd67897c7598df4a063774a1bc2a557fd48ee3f6f92a465ef4618cb8742d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [15/20], loss2: 0.1595
+</pre></div>
+</div>
+<img alt="../_images/1c6f711d299e880bfa1dd758ac936ff0609f1284ec0fdf2c51a865d61310cac9.png" src="../_images/1c6f711d299e880bfa1dd758ac936ff0609f1284ec0fdf2c51a865d61310cac9.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [16/20], loss2: 0.1436
+</pre></div>
+</div>
+<img alt="../_images/d324c10bc60100d23d1499d37959cb019804e799c6947f8447fea65c7b5c4cfd.png" src="../_images/d324c10bc60100d23d1499d37959cb019804e799c6947f8447fea65c7b5c4cfd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [17/20], loss2: 0.1606
+</pre></div>
+</div>
+<img alt="../_images/c023961559326f5abbf209f17388e0962fcd8f7a85e62397258a758a0d2ea291.png" src="../_images/c023961559326f5abbf209f17388e0962fcd8f7a85e62397258a758a0d2ea291.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [18/20], loss2: 0.1410
+</pre></div>
+</div>
+<img alt="../_images/f796a64f86c5c620c2d7f8f8d321d2878cb947e6778fea8001f5c1b35ebeeff5.png" src="../_images/f796a64f86c5c620c2d7f8f8d321d2878cb947e6778fea8001f5c1b35ebeeff5.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [19/20], loss2: 0.1432
+</pre></div>
+</div>
+<img alt="../_images/55af4c1b54b6221f0becfb94051157f935e54d6f285ad3ec56e69894896e3e96.png" src="../_images/55af4c1b54b6221f0becfb94051157f935e54d6f285ad3ec56e69894896e3e96.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch [20/20], loss2: 0.1392
+</pre></div>
+</div>
+</div>
+</div>
+<p><br><br></p>
+</section>
+<section id="exp2-2-result-1">
+<h2>Exp2.2. Result 1<a class="headerlink" href="#exp2-2-result-1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>m1 = the one layer linear model outputing a hidden layer dim (49 dim) while training the 10 class hand-wrriten digit images (28x28 = 784 dim).</p></li>
+<li><p>m2 = the SAE model training the larger hidden layer dim (49 dim) representing each feature in a smaller hidden layer dim (2 dim).</p></li>
+<li><p>in this experiment, sparsity level was added, especially in this case setting highly sparsity level (ie 0.999) to get ideal results.</p></li>
+<li><p>the left boxes are graphs representing each of 49 features computed by m2 output (2 dim, xy coordinates) multiplying with its importance.</p></li>
+<li><p>the right boxes are graphs representing each of 49 features computed by a vector of m2 output (2 dim, xy coordinates) with fixed magnitude=1 multiplying with its importance.</p></li>
+<li><p>49 features are not aggregated into 2 features over 20 epochs training.</p></li>
+<li><p>This study demonstrated that setting a highly sparsity level helped to form multiple feature representations.</p></li>
+</ul>
+<br>
+<br>
+</section>
+<section id="exp2-3-run-second-exp">
+<h2>Exp2.3. Run second exp<a class="headerlink" href="#exp2-3-run-second-exp" title="Link to this heading">#</a></h2>
+<p>The second exp will test to replicate another <a class="reference external" href="https://transformer-circuits.pub/2022/toy_model/index.html">Anthropic research outcome (Elhage et al., 2022)</a> (see the 2nd-7th columns of the <strong>ReLU Output Model</strong> in the diagram below). Namely, testing if multiple features (more than 2 dim) are clearly represented in the toy model, when sparsity is set (sparsity=0.999).</p>
+<p>Here,</p>
+<ul class="simple">
+<li><p>W in h = W * x is an AE transformation from x(49dim) to h(2dim).</p></li>
+<li><p>b is a bias in h = W * x + b.</p></li>
+<li><p>W<sup>T</sup> in x’ = ReLU(W<sup>T</sup> * W * x + b) is a reconstruction from h(2dim) to x’(49 dim)</p></li>
+<li><p>W<sup>T</sup> * W represents cosine similarity matrix between features (48x48 matrix).</p></li>
+<li><p>||<span class="math notranslate nohighlight">\(W_i\)</span>|| tests if each feature is clearly represented.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sum_{j} (\hat{x}_i*x_j)^2\)</span> calculates similarity of a target feature, <span class="math notranslate nohighlight">\(\hat{x}_i\)</span>, with the remaining features.</p></li>
+</ul>
+<p><br><br></p>
+<p><img alt="alt text" src="../_images/exp1_diagram2.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### demonstrate wT*w, W-norm, cos sim distance</span>
+
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">w1</span> <span class="o">=</span> <span class="n">m2</span><span class="o">.</span><span class="n">encoder</span><span class="o">.</span><span class="n">fc_enc</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+    <span class="n">w2</span> <span class="o">=</span> <span class="n">m2</span><span class="o">.</span><span class="n">decoder</span><span class="o">.</span><span class="n">fc_dec</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+    <span class="n">b1</span> <span class="o">=</span> <span class="n">m2</span><span class="o">.</span><span class="n">encoder</span><span class="o">.</span><span class="n">fc_enc</span><span class="o">.</span><span class="n">bias</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+    <span class="n">b2</span> <span class="o">=</span> <span class="n">m2</span><span class="o">.</span><span class="n">decoder</span><span class="o">.</span><span class="n">fc_dec</span><span class="o">.</span><span class="n">bias</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+    
+    <span class="c1"># Sort the columns of &#39;a&#39; based on importance</span>
+    <span class="n">sorted_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">importance_norm</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Get indices that would sort the importance array</span>
+    <span class="n">w1_sorted</span> <span class="o">=</span> <span class="n">w1</span><span class="p">[:,</span> <span class="n">sorted_indices</span><span class="p">]</span> <span class="c1"># Reorder the columns of &#39;a&#39; based on sorted indices</span>
+    <span class="n">w2_sorted</span> <span class="o">=</span> <span class="n">w2</span><span class="p">[</span><span class="n">sorted_indices</span><span class="p">,</span> <span class="p">:]</span> <span class="c1"># Reorder the columns of &#39;a&#39; based on sorted indices</span>
+    <span class="n">b2_sorted</span> <span class="o">=</span> <span class="n">b2</span><span class="p">[</span><span class="n">sorted_indices</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Reorder the columns of &#39;a&#39; based on sorted indices, and transpose as wT</span>
+
+    <span class="n">w1_sorted_t</span> <span class="o">=</span> <span class="n">w1_sorted</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">mask_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">w1_sorted_t</span><span class="p">)))</span>
+    <span class="n">w1_cos_sim</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">w2_cos_sim</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">w1_sorted_t</span><span class="p">)):</span>
+        <span class="n">w1_sorted_t_target</span> <span class="o">=</span> <span class="n">w1_sorted_t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">idx_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">mask_range</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">w1_sorted_t_ref</span> <span class="o">=</span> <span class="n">w1_sorted_t</span><span class="p">[</span><span class="o">~</span><span class="n">idx_mask</span><span class="p">]</span>
+        <span class="n">cos_sim1</span> <span class="o">=</span> <span class="p">((</span><span class="n">w1_sorted_t_target</span> <span class="o">@</span> <span class="n">w1_sorted_t_ref</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">w1_cos_sim</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cos_sim1</span><span class="p">)</span>
+
+        <span class="n">w2_sorted_target</span> <span class="o">=</span> <span class="n">w2_sorted</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">idx_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">mask_range</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">w2_sorted_ref</span> <span class="o">=</span> <span class="n">w2_sorted</span><span class="p">[</span><span class="o">~</span><span class="n">idx_mask</span><span class="p">]</span>
+        <span class="n">cos_sim2</span> <span class="o">=</span> <span class="p">((</span><span class="n">w2_sorted_ref</span> <span class="o">@</span> <span class="n">w2_sorted_target</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">w2_cos_sim</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cos_sim2</span><span class="p">)</span>
+
+    <span class="n">w1_cos_dis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">w1_cos_sim</span><span class="p">)</span>
+    <span class="n">w2_cos_dis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">w2_cos_sim</span><span class="p">)</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">w1_sorted</span><span class="o">.</span><span class="n">T</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">w1_sorted</span><span class="o">.</span><span class="n">T</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">w_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">wtw</span> <span class="o">=</span> <span class="p">(</span><span class="n">w2_sorted</span> <span class="o">@</span> <span class="n">w1_sorted</span><span class="p">)</span>
+    <span class="c1"># wtw = (w_sorted.T @ w_sorted)</span>
+
+    <span class="n">wtw_clone</span> <span class="o">=</span> <span class="n">wtw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">thres</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">wtw_clone</span><span class="p">,</span> <span class="p">[</span><span class="mi">99</span><span class="p">])</span>
+    <span class="n">wtw_clone</span><span class="p">[</span><span class="n">wtw_clone</span><span class="o">&lt;</span><span class="n">thres</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">((</span><span class="mi">13</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
+
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_norm</span><span class="p">)</span> <span class="c1"># ||Wi||</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">b2_sorted</span><span class="p">)</span> <span class="c1"># b    </span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w1_cos_dis</span><span class="p">)</span> <span class="c1"># cos sim</span>
+    <span class="n">pos1</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">wtw</span><span class="p">)</span>
+    <span class="n">pos2</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">wtw_clone</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;||$W_</span><span class="si">{</span><span class="s1">&#39;i&#39;</span><span class="si">}</span><span class="s2">$||&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cos sim&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;$W^TW$&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;$W^TW$, top1%&quot;</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pos1</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pos2</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="c1"># plt.savefig(&quot;img.png&quot;)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3dcfd785bc1e3c5ef4cb403dfd77f74e04812907a73d0d0e32a7a4cbd86a9ecc.png" src="../_images/3dcfd785bc1e3c5ef4cb403dfd77f74e04812907a73d0d0e32a7a4cbd86a9ecc.png" />
+</div>
+</div>
+<br>
+</section>
+<section id="exp2-4-result-2">
+<h2>Exp2.4. Result 2<a class="headerlink" href="#exp2-4-result-2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>When feature representations are more than two, the W<sup>T</sup>W outcome also showed higher correlations spreadding out across features, whereas highly correlated features are still the ones with higly important features.</p></li>
+<li><p>Too bad, I did not set up model hyperparameters properly such that outputs of ||Wi||, b, and cos sim are slightly diferent in unit (see y-axis of each) than the Anthropic’s outcome.</p></li>
+</ul>
+<p><br><br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">wtw_clone</span><span class="p">[:</span><span class="mi">5</span><span class="p">,:</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;$W^TW$, 5x5, top1%&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/14f5376549fc907a9d2558362ba5cc0ceeb505583b8ab589cd1b244207958827.png" src="../_images/14f5376549fc907a9d2558362ba5cc0ceeb505583b8ab589cd1b244207958827.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./nb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="notebook1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Experiment 1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="notebook3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Experiment 3</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exp2">Exp2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exp2-0-prepare-packages">Exp2.0. Prepare packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exp2-1-run-first-exp">Exp2.1. Run first exp</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exp2-2-result-1">Exp2.2. Result 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exp2-3-run-second-exp">Exp2.3. Run second exp</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exp2-4-result-2">Exp2.4. Result 2</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
