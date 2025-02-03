@@ -7,8 +7,8 @@ parts:
   - caption: My work
     chapters:
     - file: nb/notebook1
-      title: Project1
+      title: Exp1
     - file: nb/notebook2
-      title: Project2
+      title: Exp2
     - file: nb/notebook3
-      title: Project3
+      title: Exp3
