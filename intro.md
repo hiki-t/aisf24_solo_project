@@ -3,16 +3,16 @@
 <br>
 
 <em><strong>TL;DR:</strong> 
-My project replicated the research findings of Anthropic's Toy Model (Elhage et al., 2022) 
+My project replicates key findings from Anthropic's Toy Model (Elhage et al., 2022) 
 and the Sparse Autoencoder (Bricken et al., 2023) 
 using a single-layer linear model with ReLU filtering, 
-trained on the MNIST handwritten digit dataset (Exp1-2). 
-Building on these replications, 
-I introduced a novel interpretability technique, 
-which makes the model's internal representations more transparent 
-and easier for humans to understand (Exp3). 
-Codes were provided for each Exp. 
-You can directly jump into the project summary [here](#proj-sum).</em>
+trained on the MNIST dataset (Exp1-2). 
+Building on this, 
+I introduce a novel interpretability technique 
+designed to make the model’s internal representations 
+more transparent and human-understandable (Exp3). 
+Code is provided for each experiment. 
+You can skip directly to the project summary [here](#proj-sum).</em>
 
 <br>
 
@@ -20,28 +20,35 @@ You can directly jump into the project summary [here](#proj-sum).</em>
 
 <br>
 
-During Oct 2024 - Feb 2025,  
-I participated in the AI Safety Fundamentals (AISF) program, organised by the BlueDot Impact.
+<b>Participation Overview</b>
 
-I particularly took the Alignment course (https://aisafetyfundamentals.com/alignment/).  
+From October 2024 to February 2025, I participated in the AI Safety Fundamentals (AISF) program, organised by the BlueDot Impact. I specifically took part in the Alignment course (https://aisafetyfundamentals.com/alignment/), which was structured into two phases:  
 
-This course was composed of two phases: (1) the learning phase, and (2) the project phase.
+1. <b>Learning Phase (8 weeks)</b>: This phase provided foundational knowledge on AI safety topics such as AI risks and misalignment, reinforcement learning from human feedback (RLHF), scalable oversight, AI model robustness, mechanistic interpretability, and model risk/capability evaluations. It helped in formulating research questions and deeply engaging with the field.
+2. <b>Project Phase (4 weeks)</b>: This phase allowed participants to explore their own research questions. I conducted three experiments over three weeks and spent two weeks writing my findings, dedicating approximately 4-6 hours per week.
 
-(1) The learning phase was helpful for building fundamental knowledge in AI Safety (e.g. addressing AI risks and misalignment, RLHF, Scalable oversight, AI model robustness, Mechanistic Interpretability, model risks/capabilities evaluations), developing further research questions and deeply mentally engaging in this field during periods of 8 weeks.
+<b>Project Goals and Execution</b>
 
-(2) The project phase provided invaluable opportunities to tackle own research questions during periods of 4 weeks (I finished 3 experiments in 3 weeks and 1 week for writing).
+My initial goal was to create an interactive project—similar to previous AISF projects [like this](https://swe-to-mle.pages.dev/posts/deck-of-many-prompts-jailbreaking-llms-for-fun-and-profit/) or engaging educational content like [this YouTube clip](https://www.youtube.com/watch?v=1xB2ooTa3yE&t=17s)—to make AI safety concepts more accessible. However, due to time constraints, I shifted my focus to a more practical and reproducible approach.
 
-My initial goal of this project was to create an interactive project like [this youtube clip](https://www.youtube.com/watch?v=1xB2ooTa3yE&t=17s) so that people visiting my project enjoy playing like a mini game, but it was too ambitious to complete. Instead, I made my project simple replications of Anthropic work with toy models and real image dataset with provided codes so that visitors can implement ones by themselves. Also, I maintained running my exps requiring only personal computer power (2024 PC/laptop), not needing a big cloud computing or GPUs so that hopefully people can run my exps locally!
+Instead, I developed a project that replicates key findings from Anthropic’s work using toy models and real image datasets. The provided code allows visitors to implement experiments themselves, fostering hands-on learning. Additionally, I ensured that all experiments run on standard personal computers (2024 PC/laptop) without requiring cloud computing or GPUs, making them accessible to a broader audience.
 
-To be noted, my exps are still not perfect because this is still my initial draft. I expect there would be many hassles visitors may encounter while running. I believe, learning something well is through making your own hands dirty! So, I recommend not only reading my project summary, but also running provided codes, experimenting with different settings, and thinking about new research settings and revised code implementations!
+<b>Encouraging Hands-on Learning</b>
 
-This way, I am hoping that new AI safety researchers, engineers, practitioners or curious active visitors can have some hands-on experience on a specific AI safety topic.
+While my experiments are still in a draft stage and may have areas for improvement, I encourage visitors to engage actively by:
+- Running the provided code
+- Experimenting with different settings
+- Exploring alternative research questions and modified implementations
 
-Of course, there is no problem to just read my project summary to get a high level gist of my project's finding and think through future directions or wider applications.
+This approach aims to help new AI safety researchers, engineers, and practitioners gain practical experience in a specific AI safety topic—particularly superposition analysis. My project is designed as a self-guided starting point for running AI safety experiments.
 
-If you can leave some feedback, inspirations, interesting ideas regard to my project, I would love to hear!
+Of course, there is no problem to just read my project summary to get a high-level overview of my project's findings and think through future directions or wider applications. Feel free to explore as you wish!
 
-My contacts  
+<b>Accessibility and Engagement</b>
+
+I welcome feedback, insights, and ideas to improve or expand this work. Feel free to reach out!
+
+Contacts  
 X/Twitter: https://x.com/htsujimura  
 Bluesky: https://bsky.app/profile/htsujimura.bsky.social  
 Linkedin: https://www.linkedin.com/in/hikaru-tsujimura/  
@@ -56,135 +63,95 @@ Linkedin: https://www.linkedin.com/in/hikaru-tsujimura/
 
 <details>
 
-<summary> <b>For non-technical people, click and read hidden texts here for backgrounds to get familiar with minimum knowledge for the Mechanistic Interpretability method</b> </summary>
+<summary> <b>For non-technical readers, click and read hidden texts here for background information on the Mechanistic Interpretability (Mech Interp) method</b> </summary>
 
 <br>
 
-Without a doubt, 
-the 2020s is the decade we, humans, have started concerning serious threats of AI risks 
-and AI's expanding capabilities replacing human labors across a wide range of occupations 
+<b>Overview of Previous AI Safety Research</b>
+
+The 2020s have marked a turning point in our awareness of AI risks, 
+particularly as AI systems rapidly expand their capabilities, 
+potentially replacing human labor across numerous fields 
 ([see an overview of concerned AI risks on my linkedin post](https://www.linkedin.com/posts/hikaru-tsujimura_ai-aiabrrisk-aiabrthreat-activity-7256778739252916224-RfI3?utm_source=share&utm_medium=member_desktop)).
+Researchers have increasingly identified concerning behaviors 
+in state-of-the-art (SOTA) AI systems, 
+such as deception, 
+power-seeking tendencies, 
+and the ability to hide true intentions. 
+If AI continues advancing unchecked, 
+particularly with opaque internal processes and misaligned goals, 
+it could pose significant existential threats to humanity.
 
-Raising more attentions to this concern, 
-researchers have continuously discovered that 
-the state of art (SOTA) large language models (LLMs, like the ChatGPT) 
-or simpler machine learning models/AI systems are 
-already capable of demonstrating concerning behaviors 
-(e.g. showing deceiving behaviors to pretend to follow human instructions, hiding true intentions, power acquisition). 
-If AIs continue to expand their capabilities at this pace with hidden thoughts, 
-especially secretly holding vicious attitudes towards humanity existence, 
-humans will be wrecked in the future once super-human AIs are ready for breaking out of human controls.
+To address these risks and improve transparency in AI decision-making, 
+<b>Mechanistic Interpretability</b> <b>(Mech Interp)</b> 
+has emerged as a groundbreaking approach (Olah et al., 2020). 
+The primary goal of Mech Interp is 
+to decompose complex neural activities into interpretable components, 
+making it easier to predict AI behavior and mitigate potential risks.
 
-To mitigate our existential risks 
-and also make internal minds of advanced AIs more transparent 
-and predict thier subsequent behaviors, 
-the Mechanistic Interpretability (Mech Interp), 
-a ground-breaking novel interpretability approach has been proposed (Olah, et al., 2020).
+A fundamental concept in Mech Interp is the identification of <b>features</b>, 
+which function like elements in the periodic table, 
+representing distinct interpretable information. 
+Groups of features form <b>circuits</b>, 
+similar to chemical compounds, encoding more complex patterns. 
+A key claim of Mech Interp is that these neural structures exhibit <b>universality</b>, 
+meaning similar patterns exist across different models, 
+enabling efficient reuse of learned representations.
 
-A primary goal of the Mech Interp method is 
-to decompose internal complex neural activities of models into 
-more interpretable components of neural activity patterns or representations 
-(e.g. ideally interpretable 
-if one neuron activation frequently corresponds to 
-a curve-shape in an image, then the neuron is assumed to be a curve-detector neuron).
+However, two challenges hinder interpretability:
+1. <b>Polysemanticity</b>: A single neuron can encode multiple unrelated features, making it difficult to map neurons to specific concepts.
+2. <b>Superposition</b>: More features can be represented than there are neurons available by encoding multiple features in a compressed manner (Elhage et al., 2022). Superposition occurs when features are sparsely represented, allowing efficient but entangled storage of information.
 
-The minimum interpretable component is called as "features", 
-akin to a chemical element in the periodic table (e.g. C or Carbon), 
-responsible for a simpler distinct information, 
-such as a particular angle of a curve-shape, 
-while a collection of features or connections between features is called "circuits", 
-akin to a chemical compound, such as CO<sup>2</sup>, 
-responsible for a more complex information, 
-such as circular or more complex curve-shape. 
-The Mech Interp approach has claimed that 
-these unique neural expressions would coexist 
-across models to make best use of these neural representations to a wide range of tasks 
-or circumstances, and this phenamena is called as "universality".
-
-However, these neural representations are sometimes not simply expressed 
-because a neuron which is responsible for a curve-shape image 
-might also be responsible for a dog ear image, which is called "polysemanticity", 
-making AI researchers hard to identify 
-target neurons independently corresponding for single features. 
-
-The other research direction has also demonstrated that 
-a more number of features can be expressed with a less number of neurons, 
-e.g. expressing four features with two neurons, 
-by differentiating a combination of two neuronal activations
-(e.g. activating 
-neuron1(10%)-neuron2(90%) for feature1, 
-neuron1(45%)-neuron2(45%) for feature2, 
-neuron1(90%)-neuron2(10%) for feature3, 
-neuron1(0%)-neuron2(0%) for feature4), 
-whose phenamena is called "superposition" (Elhage et al., 2022). 
-The Anthropic research team has suggested that 
-the superposition emerges 
-when a frequency of representing those features are sparse 
-(i.e. sparsity level is high) in each neuron
-so that there are some rooms for superposition expressions.
-
-To disentangle the polysemanticity and superposition expressions 
-into the "monosemantic" expressions 
-– representing only one feature with one corresponding neuron – 
-the technique of Sparse Autoencoder has been introduced 
-(Bricken et al., 2023), 
-enhancing interpretability of models.
+To overcome these challenges, 
+researchers have developed <b>Sparse Autoencoders</b> (Bricken et al., 2023), 
+a technique designed to disentangle polysemantic and 
+superposed representations into <b>monosemantic</b> ones—where 
+a single neuron corresponds to a single feature, enhancing interpretability.
 
 </details>
 
 <br>
- 
-Although the Anthropic work 
-(Elhage et al., 2022) 
-has demonstrated the superposition in toy models,
-representing more number of features than a given number of neurons,
-they have used synthetic feature data, 
-which were clean, hypothetically defined 
-and a small number of features 
-(i.e. 3~20, although one result demonstrated with 80 features).
-In contrast, AI researchers often deal with more noisy, 
-unknown data (or feature) distribution, 
-and often failing replication of proposed theories/findings with raw datasets.
 
-Therefore, this project aimed to replicate the Anthropic previous work, 
-demonstrating a toy model 
-(i.e. a single-layer linear model with ReLU filtering) of superposition 
-with the MNIST hand-written digit image database and 
-investigate further application of the findings with the image dataset.
+<b>Research Objectives</b>
+
+Anthropic's previous work (Elhage et al., 2022) 
+demonstrated superposition in toy models, 
+showing that features outnumber neurons 
+when sparsity is high. 
+However, their experiments used synthetic, 
+well-defined feature distributions with limited diversity 
+(3–20 features, with one experiment extending to 80). 
+In real-world applications, 
+data is often noisy and lacks predefined feature distributions, 
+making replication and extension of these findings challenging.
+
+This project aimed to replicate and extend Anthropic’s findings 
+using the MNIST handwritten digit dataset, 
+a real-world image dataset, 
+to test whether superposition effects persist in practical applications.
 
 Specifically, I conducted three experiments (Exp1-3):
-- <b>Exp1</b> tested to replicate if superposition would not occur
-when data or feature was dense (i.e. sparsity level was 0).
-- <b>Exp2</b> tested to replicate if superposition would occur 
-when its sparsity level was high (e.g. 0.999).
-- As I successfully replicated Exp1-2, I conducted <b>Exp3</b> to explore further
-if features of the real image data can be extracted with 
-the technique of sparse autoencoder (Bricken et al., 2023),
-and test if these features can be converted further 
-to more human understandable/interpretable information (i.e. image),
-by using an image generative model.
+- <b>Exp1</b>: Tested whether superposition does not occur when feature sparsity is zero (dense representation).
+- <b>Exp2</b>: Tested whether superposition occurs at high sparsity levels (e.g., 0.999).
+- <b>Exp3</b>: Used Sparse Autoencoders to extract features from MNIST images and assessed whether these features could be converted into human-interpretable visual representations using a generative model.
 
 <br>
 
 <h3 id="exp1"> Exp1 </h3>
 
-The Exp1 tested 
-to replicate one of the Anthropic research outcome (Elhage et al., 2022), 
-claiming that a toy model of superposition would not be occured 
-when feature distribution is dense (i.e. sparsity level is zero), 
-only ending up representing a same number of features with given neurons. 
-To test this claim, 
-I implemented a simple linear model 
-with a single hidden layer 
-(containing 49 neurons or dimensions) 
-and ReLU filtering 
-and trained the model with the MNIST digit dataset 
-to perform a digit classification task.
-After that, 
-I implemented a classic autoencoder model
-to map the 49 feature representations in the linear model 
-into smaller 2 dim or neurons in the autoencoder model, 
-inspecting if only two feature representations survive in the hidden layer of the autoencoder model.
+The Exp1 aimed 
+to verify a claim from Elhage et al., (2022) 
+that superposition does not occur 
+when feature sparsity is zero—meaning 
+the number of features should match the number of neurons. 
+
+<b>Methodology</b>
+
+- Implemented a simple linear model with one hidden layer (49 neurons) and ReLU filtering, trained on MNIST dataset for digit classification.
+- Trained a classic autoencoder to map the 49-dimensional representations into a 2D latent space, testing whether only two primary features remained.
+- Measured feature importance, defined as the contribution of each feature to the autoencoder’s mean squared error (MSE) loss to reconstruct the 49-dimensional neural representations of the linear model.
+- The measured feature importance was expressed as the line length of each feature on the 2 dim feature representation map.
+
 See <b>Diagram 1</b> for visual summary of this experiment. For further details of Exp1, check [here](nb/notebook1.ipynb).
 
 <br>
@@ -198,18 +165,13 @@ Please ignore a number of neurons (circles), which are not correct.
 
 <br>
 
-With the aforementioned research setting, 
-I replicated the finding of Anthropic previous work, such that
-the 49 features were gradually represented into 
-the two major feature directions 
-across training epochs. 
-When normalized importance* of each feature ranging -1 to 1,
-the two important features were directed orthogonally, 
-and less important features remained relatively close to 0.
-Interestingly, some features with large importance directed middle of the two orthogonal directions.
-See <b>Figure 1</b> for visual summary of Exp1 result.
+<b>Results</b>
 
-*Importance = how much a feature contributes to the MSE loss of the autoencoder model to reconstruct the 49 neural activations of the lienar model. The more contribution, the larger importance value. 
+- The 49 features gradually aligned into two major feature directions over 20 training epochs.
+- When normalized between -1 and 1, the two of relatively important features were orthogonal, while relatively less important features remained closer to zero.
+- Some features with high importance appeared between the two primary directions, suggesting partial redundancy or shared information.
+
+See <b>Figure 1</b> for visual summary of Exp1 result.
 
 <br>
 
@@ -227,17 +189,21 @@ Codes, more results and detailed research settings are available [here](nb/noteb
 
 <h3 id="exp2"> Exp2 </h3>
 
-After the first successful replication in Exp1,
-showing no superposition of the toy model with dense feature, 
-Exp2 tested further if supeturerposition would occur 
-when feature distribution was highly sparse (i.e. sparsity level = 0.999).
+After successfully replicating the results in Experiment 1 (Exp1), 
+which showed no superposition in a toy model with dense features, 
+Experiment 2 (Exp2) tested 
+whether superposition would emerge 
+when the feature distribution was highly sparse (sparsity level = 0.999).
 
-In Exp2, experiment design was exactly same as the Exp1, 
-except a condition 
-in which feature distribution was maintained sparse 
-by using sparsity penalty during data transformation 
-from the 49 dim neural representations of the linear model into
-the 2 dim neural representations of the autoencoder model.
+<b>Methodology</b>
+
+Exp2 followed the same experimental design as Exp1, 
+with one key difference: 
+a sparsity penalty was applied during data transformation. 
+Specifically, the transformation 
+from the 49 dim neural representations of the linear model to 
+the 2 dim neural representations of the autoencoder 
+included a constraint to maintain feature sparsity. 
 See <b>Diagram 2</b> for visual summary of this experiment. 
 For further details of Exp2, check [here](nb/notebook2.ipynb).
 
@@ -252,16 +218,21 @@ from the 49 dim neural representations to the 2 dim neural representations.
 
 <br>
 
-Based on the slight change in the research setting, 
-I replicated to show superposition of the linear model 
-with highly sparse features, such that
-the 49 features neural representations of the linear model
-were represented with
-multiple feature directions in the 2 dim autoencoder neurons. 
-It was unclear what kind of feature representations these were 
-(e.g. orthogonal, antipodal, pentagon, or more complex geometry), 
-but it would be interesting to explore future research direction
-to investigate feature geometry development with the MNIST image dataset. 
+<b>Results</b>
+
+By making this adjustment, 
+I successfully replicated superposition in the linear model 
+with highly sparse features. 
+The 49 dim neural representations were mapped onto 
+multiple feature directions within the 2 dim autoencoder's hidden layer neurons. 
+However, the exact nature of these feature representations—whether 
+they were orthogonal, antipodal, pentagonal, 
+or followed a more complex geometric structure—remains unclear.
+
+This finding suggests a potential avenue for future research: 
+investigating the development of feature geometry in more complex datasets, 
+such as MNIST. 
+
 See <b>Figure 2</b> for visual summary of Exp2 result.
 
 <br>
@@ -278,34 +249,39 @@ Codes, more results and detailed research settings are available [here](nb/noteb
 
 <h3 id="exp3"> Exp3 </h3>
 
-Building on the successful replications of the Anthropic previous work in Exp1 and Exp2, 
-demonstrating superpositions of a single-layer linear model with the MNIST digit image dataset,
+Building on the successful replications of the Anthropic's previous work in Exp1 and Exp2—
+demonstrating superposition in a single-layer linear model trained on the MNIST digit dataset—
 <b>Exp3</b> explored further 
-whether superposition of the lienar model with the image datasets 
+whether the image data-driven superposed expressions in the lienar model 
 would be applicable for improving interpretability 
-and transparency of neural representations of the extracted features.
+and transparency of neural representations of extracted features.
 
 Specifically, 
 important features identified
 in the sparse autoencoder (SAE) model has been used 
 for "steering", 
-a technique to amplifying selective features 
-compared to other features, 
+a technique to amplifying selective features, 
 enforcing models to output the steered features more frequently in language models 
 (e.g. [Anthropic's Golden Gate Bridge case, 2024](https://www.anthropic.com/news/mapping-mind-language-model)). 
 Extending from the steering technique in the language models, 
-Exp3 explored 
-if steering selective features important for each digit 
-(e.g. feature 1 for digit 9) in the SAE model 
-can reconstruct digit-like (e.g. 9-like) images,
-transparently interpreting that 
-selective features are crucial for 
-representing an digit-like image 
-or a particular part 
-of the digit-like image 
-(e.g. circular part, ending or outline of 9).
+Exp3 applies steering to a sparse autoencoder (SAE) trained on MNIST digit representations 
+to determine whether activating specific features 
+can reconstruct digit-like images, 
+thereby highlighting their role in image representation.
 See <b>Diagram 3</b> for visual summary of this experiment. 
 For further details of Exp3, check [here](nb/notebook3.ipynb).
+
+<b>Methodology</b>
+
+Model Architecture and Experiment Design
+1. Baseline Models (Steps ①-②):
+   - A one-layer linear model is trained on MNIST images.
+   - An SAE model is trained to reconstruct the 49 dim hidden layer activations of the linear model, using a 98 dim hidden layer.
+2. Image Reconstruction (Steps ③-➃):
+   - An image generative model or a decoder is trained to reconstruct 28×28 images from the 49-dimensional hidden activations of the linear model.
+3. Feature Steering (Steps ➄-➅):
+   - After training, only select neurons in the SAE model (e.g., the neuron corresponding to "feature 1" for digit 9) are activated, while others are set to zero.
+   - The resulting activations reconstruct the 49 dim hidden layer of the linear model, which is then used to regenerate the 28×28 digit-like images through the image generative model.
 
 <br>
 
@@ -318,31 +294,21 @@ Please ignore a number of neurons (circles) on the graph, which are not correct.
 
 <br>
 
-Implementing an explorative interpretability approach, 
-using a combination of the linear model (the main model for the digit classification task with the MNIST image datasets), 
-the sparse autoencoder model (for representing relatively monosemantic-like features than the main model),
-and the image generative model (for reconstructing the image datasets the from selective features important for each digit class)
-preliminarily collected interesting results. 
-As expected, the feat histogram 
-(histograms of activations level of features for each digit class)
-demonstrated that 
-only a few features (2~5/98) of the SAE model strongly contributed to the MSE loss for each digit class
-to reconstruct the 49 dim hidden layer of the linear model.
-Additionally, 
-only activating the selective key features 
-(and deactivating other features setting to 0)
-led to reconstruct each digit-like images.
-These features-based digit image reconstructions were unsupervised (not specifically trained),
-and purely achieved by transparently interpreting key features with the human-understandable approach.
+<b>Results</b>
+
+Exp3 produced promising preliminary findings:
+- <b>Feature Contribution</b>: Activation histograms (or Feat histogram) showed that only a few (2–5 out of 98) SAE features strongly influenced the mean squared error (MSE) loss when reconstructing the 49 dim hidden layer of the linear model for each digit.
+- <b>Unsupervised Digit Reconstruction</b>: Selectively activating key features led to unsupervised reconstruction of digit-like images without direct supervision, demonstrating the interpretability of the features in a human-understandable manner.
+
 See <b>Figure 3</b> for visual summary of Exp3 result.
 
 <br>
 
 ![alt text](img/exp3_2.png "Figure3")
 <b>Figure 3:</b> Visual summary of Exp3 results.
-The left column showed a collection of histograms of 98 feature activations with two border lines (orange dashed line for the 90th percentile and black dashed line for expected probability = 1/98). The activation level was normalized so that a sum of all activation level was 1. This histogram showed the results when the SAE model sparsity level = 0.999.
+The left column showed a collection of histograms of 98 feature activations with two vertical border lines (orange dashed line for the 90th percentile and black dashed line for expected probability = 1/98). The activation level was normalized so that a sum of all activation level was 1. This histogram showed the results when the SAE model sparsity level = 0.999.
 The middle column provided an example visual aids demonstrating how each digit class activated selective neurons/features important for each digit class (and deactivated non-important features), which reconstructed the 49 dim hidden layer of the linear model.
-The right column drew how the selective features important for each digit class ended up reconstructing each digit class-like 28x28 image with the image generative model.
+The right column drew how the selective features important for each digit class generated each digit class-like 28x28 image with the image generative model.
 
 <br>
 
@@ -352,25 +318,14 @@ Codes, more results and detailed research settings are available [here](nb/noteb
 
 <h3 id="exp3"> Final conclusion and future direction </h3>
 
-Exp1-2 replicated to demonstrate 
-superposition of the toy models (a single layer linear model with ReLU filtering)
-with the MNIST hand-written digit image datasets. 
-This supports that even a simple linear model represents 
-superposition with raw datasets of image domain.
-This suggests that 
-it would be worthwhile to explore further 
-whether more scaled models or datasets or more complex image data 
-(e.g. more diverse range of images) would also represent superpositon.
+Exp 1 and 2 successfully replicated the superposition phenomenon in toy models—specifically, a single-layer linear model with ReLU filtering—using the MNIST handwritten digit dataset. This confirms that even simple linear models exhibit superposition when trained on raw image data. These results suggest further investigation into whether larger models, more complex datasets, or more diverse image domains also exhibit similar behavior.
 
-The other novel findings in Exp3 showed that 
-more human understandable interpretability technique could be developed
-by using a combination of 
-a main model (conducting a main task), 
-a SAE model (extracting relatively more mono-semantic-like features than the main model), and 
-a generative model (reconstructing inputs/datasets from hidden layer(s) of the main model), 
-and reconstructing inputs/datasets-like stimuli by activating key features. 
-It would be useful if this combined technique could be applicable to a variety of tasks, domains and goals
-by switching each of the aforementioned three roles with the most relevant ones.
+A key novel finding from Exp 3 is that interpretability can be enhanced using a combination of three models:
+- A <b>main model</b> performing the primary task.
+- A <b>sparse autoencoder (SAE)</b> extracting more mono-semantic-like features.
+- A <b>generative model</b> reconstructing inputs from the hidden layers of the main model.
+
+By selectively activating key features, this approach enables the reconstruction of dataset-like stimuli, potentially improving human interpretability. Future work could explore applying this combined technique across different tasks, domains, and objectives by adapting each component to the most relevant architecture or model type.
 
 <br>
 
