@@ -391,31 +391,41 @@
 <br>
 <p>To make more specifics, I will test two directions in Exp3 (see the below diagram for visual summary),</p>
 <ul class="simple">
-<li><p>The 1st exp (the brown rectangle boxes):</p>
+<li><p>The 1st exp (Steps ①-②):</p>
 <ul>
 <li><p>a toy model is the same Linear model with one hidden layer (49 dim) and a ReLU filtering function.</p></li>
-<li><p>decomposing features from the original dim (49 dim) into a larger dim (49*2 dim) with varied sparsity level (0.1 vs 0.999) via sparse autoencoder (SAE) model.</p></li>
+<li><p>decomposing features from the original dim (49 dim) into a larger dim (98 dim) with varied sparsity level (0.1 vs 0.999) via sparse autoencoder (SAE) model.</p></li>
 <li><p>if small sparsity level is set (0.1), feature representations will be limited with a fewer neurons,</p>
 <ul>
 <li><p>which is demonstrated by activation histogram (like the above diagram) with a larger tail at low activation and only a few neurons with large activation for each digit. <a class="reference internal" href="#Figure-1"><span class="xref myst">(Figure 1)</span></a></p></li>
 </ul>
 </li>
-<li><p>if high sparsity level is set (0.999), feature representations will be more spread across neurons,</p>
+<li><p>if high sparsity level is set (0.999), feature representations will be more widely spread across neurons,</p>
 <ul>
 <li><p>which is demonstrated by activation histogram with a smaller tail at low activation and more neurons with midium to large activation for each digit. <a class="reference internal" href="#Figure-2"><span class="xref myst">(Figure 2)</span></a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>The 2nd exp (the orange rectangle box):</p>
+<li><p>The 2nd exp (Steps ③-➅):</p>
 <ul>
-<li><p>training the gen model (49 dim) with features of the original hidden layer (49 dim) and the MNIST digit image datasets and test if activation of the hidden layer feature alone can reconstruct the original images with the gen model. <a class="reference internal" href="#Figure-3"><span class="xref myst">(Figure 3)</span></a></p></li>
+<li><p>Image Reconstruction (Steps ③-➃):</p>
+<ul>
+<li><p>An image generative model or a decoder is trained to reconstruct 28×28 images from the 49-dimensional hidden activations of the linear model.</p></li>
+</ul>
+</li>
+<li><p>Feature Steering (Steps ➄-➅):</p>
+<ul>
+<li><p>After training, only select neurons in the SAE model (e.g., the neuron corresponding to “feature 1” for digit 9) are activated, while others are set to zero.</p></li>
+<li><p>The resulting activations reconstruct the 49 dim hidden layer of the linear model, which is then used to regenerate the 28×28 digit-like images through the image generative model. <a class="reference internal" href="#Figure-3"><span class="xref myst">(Figure 3)</span></a></p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <p><br><br></p>
-<p><img alt="img title" src="../_images/exp3_diagram1.png" /></p>
-<p><br><br></p>
+<p><img alt="img title" src="../_images/exp3_1.png" /></p>
+<!--  ![img title](../img/exp3_diagram1.png "Diagram1") --><p><br><br></p>
 </section>
 <section id="exp3-0-prepare-packages">
 <h2>Exp3.0. Prepare packages<a class="headerlink" href="#exp3-0-prepare-packages" title="Link to this heading">#</a></h2>
@@ -1346,7 +1356,8 @@ Epoch [10/10], loss-val: 0.0061
 <ul class="simple">
 <li><p>these above graphs are histograms of activation level (x-axis) of each neuron responding to each digit input.</p></li>
 <li><p>the “10” class is randomly scrambled digit inputs, which should be ignored, aiming to enhance to ignore background images.</p></li>
-<li><p>the black dotted vertical line indicates mean activation level.</p></li>
+<li><p>a sum of the activation level of all 98 neurons is set to 1.</p></li>
+<li><p>the black dotted vertical line indicates expected activation level, 1/98.</p></li>
 <li><p>the organge dotted vertical line indicates the top 90th percentile activation level.</p></li>
 <li><p>when sparsity level is set to 0.1, only a few neuron is largely activated, and the rest of neurons are not activated much.</p></li>
 <li><p>in contrast, when sparsity level is set to 0.999, neuron activations are widely distributed.</p></li>
@@ -1361,8 +1372,8 @@ Epoch [10/10], loss-val: 0.0061
 <p>More specific questions are:</p>
 <p>The core questions:</p>
 <ul class="simple">
-<li><p>merely activating specific neurons in the hidden layer of the lin model can reconstruct human-tangible images?</p></li>
-<li><p>even though neuron activations are widely distributed when sparsity level is large, does a specific collection of neurons represent a specific digit image?</p></li>
+<li><p>merely activating specific neurons in the hidden layer of the lin model can reconstruct human-understandable images?</p></li>
+<li><p>even though neuron activations are widely distributed when sparsity level is large, does a specific collection of neuron activations represent a specific digit image?</p></li>
 <li><p>are there any difficulties representing specific digit images?</p></li>
 </ul>
 <p>The feature structures:</p>
@@ -1458,7 +1469,7 @@ class all: [15 67 84 28  6 25 47 55 30 76 66 97 93 63 69 61 20 14 36 29 72 74 21
 </li>
 <li><p>interestingly, structures across reconstructed hidden layer neurons and structures across reconstructed images are highly correlated (0.6554962153023876).</p>
 <ul>
-<li><p>does it mean that data distributions are similar based on physical features and mentally represented features?</p>
+<li><p>does it mean that data distributions are similar based on physical features and internally represented features?</p>
 <ul>
 <li><p>in fact, digit images are extracted products from human internal representations or abstracted concepts, so it would be interesting to see if naturally existied objects will show similar patterns.</p></li>
 </ul>
